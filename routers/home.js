@@ -1,6 +1,5 @@
 const express = require('express');
 const multer = require('multer');
-
 const routers = require('routers')
 const {db} = require("../utils");
 
@@ -21,17 +20,21 @@ homeRouter
         res.render('blogs/view-blog',{
             blog: db.getOne(req.params.id),
         })
+
     })
     .post('/',(req,res) =>{
         const id = db.create(req.body);
 
          res.render('blogs/added',{
              title: req.body.title,
-             id: id
+             id,
          })
     })
     .put('/:id', (req,res) => {
-        res.send('zmodyfikuj')
+        db.update(req.params.id, req.body)
+        res.render('blogs/modified',{
+            title: req.body.title,
+        })
     })
     .delete('/:id',(req,res) =>{
         db.delete(req.params.id);
