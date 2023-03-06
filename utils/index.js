@@ -1,6 +1,7 @@
 const {readFile, writeFile} = require('fs').promises;
 const {join} = require('path');
 const {v4: uuid} = require('uuid');
+const {Blogs} = require('../records/blogs')
 const {json} = require("express");
 
 class Db{
@@ -9,26 +10,26 @@ class Db{
         this.load()
     }
     async load(){
-        this.data = JSON.parse(await readFile(this.dbFileName, 'utf8'))
+        this.data = JSON.parse(await readFile(this.dbFileName, 'utf8')).map(obj => new Blogs(obj));
     };
     save(){
         writeFile(this.dbFileName, JSON.stringify(this.data), 'utf8')
     };
     create(obj){
         const id = uuid();
-      this.data.push({
-          id: id,
+        this.data.push(new Blogs({
+          id,
           ...obj,
-      });
-        this.save();
+         }));
+          this.save();
 
-        return id;
+            return id;
     };
     getAll(){
-        return this.data;
+        return this.data.map(obj => new Blogs(obj));
     }
     getOne(id){
-        return this.data.find(oneObj => oneObj.id === id)
+        return new Blogs(this.data.find(oneObj => oneObj.id === id));
     };
     update(id,newObj){
         this.data = this.data.map((oneObj) => {
