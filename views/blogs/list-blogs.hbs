@@ -1,0 +1,22 @@
+<div class="container">
+    <h1 class="text-center pb-4">Lista Blogów</h1>
+   <div class="row d-flex gap-3">
+       {{#each blogs}}
+           <div class="card" style="width: 18rem;">
+               <img src="{{this.img}}" class="card-img-top" alt="...">
+               <div class="card-body">
+                   <h5 class="card-title">{{this.title}}</h5>
+                   <p class="card-text">{{this.shortDesc}}</p>
+                   <div class="d-flex gap-3">
+                       <a href="{{this.id}}" class="btn btn-primary">Learn More</a>
+                       <form method="POST" action="/{{this.id}}?_method=DELETE"><button type="submit" class="btn btn-primary">Usuń</button></form>
+                   </div>
+
+               </div>
+           </div>
+       {{/each}}
+   </div>
+    <a href="/form/add">Dodaj Bloga</a>
+
+</div>
+
