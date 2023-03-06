@@ -5,6 +5,7 @@ const routers = require('routers')
 const {engine} = require('express-handlebars');
 const {db} = require('./utils/index')
 const {homeRouter} = require("./routers/home");
+const {handleError} = require("./utils/error");
 
 const app = express();
 
@@ -20,6 +21,6 @@ app.engine('.hbs', engine({
 app.set('view engine','hbs');
 app.use('/',homeRouter)
 
-
+app.use(handleError)
 
 app.listen(3000, 'localhost');
