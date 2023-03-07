@@ -1,11 +1,25 @@
 <div class="container">
-    <div>Nazwa bloga : <h1>{{blog.title}}</h1></div>
-    <div>Twórca bloga : <h3>{{blog.name}}</h3></div>
-    <div>Tekst : <p>{{blog.longDesc}}</p></div>
 
-    <a href="/form/edit/{{blog.id}}">Edytuj Bloga</a>
+    <div class="view-blog pt-4">
+        <div class="view-blog-heading">
+            <img src="/assets/img/img.webp" alt="">
 
-    {{> go-home}}
-    <form method="POST" action="../{{blog.id}}?_method=DELETE"><button type="submit" class="btn btn-primary">Usuń</button></form>
+            <h1 class="view-blog-title">{{blog.title}}</h1>
+        </div>
+        <p class="view-blog-content">{{blog.longDesc}}</p>
 
-</div>
+    </div>
+
+
+
+     <div class="footer-info">
+         {{> go-home}}
+         <span class="footer-info-name">author: {{blog.name}}</span>
+
+         <div class="footer-info-option">
+             <a href="/form/edit/{{blog.id}}" class="btn__edit">Edit</a>
+             <form method="POST" action="../{{blog.id}}?_method=DELETE"><button type="submit" class="btn__del">Delete</button></form>
+         </div>
+     </div>
+ </div>
+
