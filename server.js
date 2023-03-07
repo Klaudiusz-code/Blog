@@ -23,4 +23,7 @@ app.use('/',homeRouter)
 
 app.use(handleError)
 
-app.listen(3000, 'localhost');
+const port = process.env.PORT || 3000;
+
+
+app.listen(port, '127.0.0.1');
