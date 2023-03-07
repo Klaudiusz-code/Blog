@@ -1,20 +1,27 @@
-<div class="container">
-    <h1 class="text-center pb-4">Lista Blogów</h1>
-   <div class="row d-flex gap-3">
-       {{#each blogs}}
-           <div class="card" style="width: 18rem;">
-               <img src="/assets/img/img.jpg" class="card-img-top" alt="...">
-               <div class="card-body">
-                   <h5 class="card-title">{{this.title}}</h5>
-                   <p class="card-text">{{this.shortDesc}}</p>
-                   <div class="d-flex gap-3">
-                       <a href="{{this.id}}" class="btn btn-primary">Learn More</a>
-                   </div>
-
-               </div>
-           </div>
-       {{/each}}
-   </div>
-    <a href="/form/add" class="btn btn-success">Dodaj Bloga</a>
+<header class="header">
+    <nav class="menu container">
+        <div class="logo">Blog</div>
+        <div class="add"><a href="/form/add" class="add_btn">Add Blog</a></div>
+    </nav>
+    <div class="header-content">
+        <div class="header-title">Your awasome blog</div>
+        <p class="header-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa doloremque, est odit recusandae saepe voluptas</p>
+    </div>
+</header>
+<div class="container mt-5">
+    <h4 class="text-center">Recent blogs</h4>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {{#each blogs}}
+          <div class="col">
+                <div class="card">
+                    <img src="/assets/img/img.webp" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{this.title}}</h5>
+                        <a href="{{this.id}}" class="btn_learn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
 </div>
 
