@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+img{
+    object-fit: cover;
+}
+body{
+    background: #f8f8f8;
+}
+header{
+    background: #ccd8d8;
+    padding: 30px 0;
+    height: 400px;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+.logo{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.add_btn{
+    background: #5ece5e;
+    color: #fff;
+    padding: 13px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-weight: 500;
+    border: 2px solid #5db95d;
+    transition: 0.1s ease-in;
+}
+.add_btn:hover{
+    background: rgba(123, 183, 52, 0.8);
+}
+.header-content{
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+.header-title{
+    font-size: 3rem;
+    color: #3f3d3d;
+    letter-spacing: 1px;
+}
+.header-desc{
+    margin-top: 20px;
+    color: #313030;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+
+/* blog section */
+.card{
+    box-shadow: 0 2px 20px rgb(227, 213, 213);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.card-body{
+    padding: 15px 0;
+}
+.card-title{
+    margin-bottom:30px;
+}
+.blog-text{
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.blog-text span{
+    color: #847e7e;
+    font-size: 1.1rem;
+}
+.blog-btn{
+    margin-top: 25px;
+    background-color: #224b5f;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+.btn__edit{
+    padding: 8px 25px;
+    background-color: #5db95d;
+    color: #fff;
+}
+.btn__del{
+    border: none;
+    padding: 8px 25px;
+    background-color: #9d1840;
+    color: #fff;
+}
+.btn_go-home{
+    display: flex;
+    align-items: center;
+    color: #9d1840;
+}
+.btn_learn{
+    padding: 13px 25px;
+    background-color: #5ece5e;
+    color: white;
+}
+/* view-blog */
+
+
+.view-blog{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.view-blog-heading img{
+    width: 100%;
+    height: 650px;
+    border-radius: 5px;
+}
+.view-blog-title{
+    font-size: 2.3rem;
+    padding: 10px 0;
+}
+.view-blog-content{
+    letter-spacing: 1px ;
+    font-weight: 400;
+
+}
+
+.footer-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #c7c0c0;
+}
+.footer-info-name{
+    color: #3f3131;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.footer-info-option{
+    display: flex;
+    margin: 0 15px;
+    gap: 30px
+}
+
