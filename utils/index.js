@@ -1,6 +1,7 @@
-const {readFile, writeFile} = require('fs').promises;
+const {readFile, writeFile, unlink} = require('fs').promises;
 const {join} = require('path');
 const {v4: uuid} = require('uuid');
+
 const {Blogs} = require('../records/blogs')
 const {json} = require("express");
 
@@ -45,6 +46,10 @@ class Db{
         this.save()
     }
     delete(id){
+        const objToDelete = this.getOne(id);
+        if (objToDelete.img) {
+            unlink(join(__dirname, '../public/images', objToDelete.img))
+        }
         this.data = this.data.filter(oneObj => oneObj.id !== id);
         this.save();
     }
