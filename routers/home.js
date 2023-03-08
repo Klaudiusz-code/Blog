@@ -4,10 +4,19 @@ const routers = require('routers')
 const {db} = require("../utils");
 
 const app = express();
-const upload = multer({ storage: this.storage });
 
 const homeRouter = express.Router();
 
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/images/')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+    }
+});
+const upload = multer({ storage: storage });
 
 
 homeRouter
@@ -22,14 +31,18 @@ homeRouter
         })
 
     })
-    .post('/',(req,res) =>{
-        const id = db.create(req.body);
+    .post('/',upload.single('img'),(req,res) =>{
+        const id = db.create({
+            ...req.body,
+            img: req.file ? req.file.filename : null,
+        });
+        res.render('blogs/added',{
+            title: req.body.title,
+            id,
 
-         res.render('blogs/added',{
-             title: req.body.title,
-             id,
-         })
+        })
     })
+
     .put('/:id', (req,res) => {
         db.update(req.params.id, req.body)
         res.render('blogs/modified',{
