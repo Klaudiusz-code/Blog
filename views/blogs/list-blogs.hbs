@@ -10,15 +10,18 @@
 </header>
 <div class="container mt-5">
     <h4 class="text-center">Recent blogs</h4>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
         {{#each blogs}}
           <div class="col">
                 <div class="card">
-                    <img src="/images/{{this.img}}" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">{{this.title}}</h5>
-                        <a href="{{this.id}}" class="btn_learn">Learn More</a>
+                    <div class="card-image">
+                        <img src="/images/{{this.img}}" class="card-img" alt="img">
                     </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.title}}</h5>
+                    </div>
+                    <a href="{{this.id}}" class="btn_learn">Learn More</a>
+
                 </div>
             </div>
         {{/each}}
