@@ -2,7 +2,7 @@
 <div class="container">
     <h2 class="text-center mb-3">Edycja Bloga</h2>
 
-    <form method="POST" action="/{{blog.id}}?_method=PUT">
+    <form method="POST" action="/{{blog.id}}?_method=PUT" enctype="multipart/form-data">
         <div class="form-floating mb-3">
             <input type="text" name="name" class="form-control" id="floatingInputDisabled" placeholder="name" value="{{blog.name}}" >
             <label for="floatingInputDisabled">Imie</label>
@@ -14,10 +14,6 @@
         <div class="form-floating mb-3">
             <textarea class="form-control" name="longDesc" placeholder="Leave a comment here" id="floatingTextarea2Disabled" style="height: 100px">{{blog.longDesc}}</textarea>
             <label for="floatingTextarea2Disabled">Treść</label>
-        </div>
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupFile01">Upload</label>
-            <input type="file" name="img" class="form-control" id="inputGroupFile01">
         </div>
         <div class="d-grid gap-2">
             <button class="btn btn-success" type="submit">Zapisz</button>
