@@ -61,12 +61,26 @@ header{
 
 /* blog section */
 .card{
+    height: 380px;
     box-shadow: 0 2px 20px rgb(227, 213, 213);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 20px;
+}
+.card-image{
+    height: 100%;
+}
+.card-img{
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+.card-title{
+    word-wrap: break-word;
+
 }
 .card-body{
     padding: 15px 0;
@@ -108,9 +122,15 @@ header{
     color: #9d1840;
 }
 .btn_learn{
-    padding: 13px 25px;
+    width: 100%;
+    padding: 13px 0;
+    text-align: center;
     background-color: #5ece5e;
     color: white;
+    transition: background-color 0.2s ease-in;
+}
+.btn_learn:hover{
+    background-color: #3c713c;
 }
 /* view-blog */
 
@@ -124,7 +144,6 @@ header{
 .view-blog-heading img{
     width: 100%;
     height: 650px;
-    border-radius: 5px;
 }
 .view-blog-title{
     font-size: 2.3rem;
@@ -154,4 +173,78 @@ header{
     margin: 0 15px;
     gap: 30px
 }
+/* Added view */
+
+.added,
+.deleted{
+    background-color: #8ddf8d;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+.added_title,
+.deleted_title{
+    margin: 0 auto;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+.name__blog{
+    color: #224b5f;
+    font-weight: 600;
+}
+.deleted{
+    background-color: #da6262;
+}
+/* media */
+
+    @media screen and (max-width: 768px) {
+        /*List Blogs*/
+        .menu {
+            padding: 1px 5px;
+        }
+
+        .header-title {
+            font-size: 2rem;
+            font-weight: 400;
+        }
+
+        .card {
+
+            font-weight: 400;
+            text-align: center;
+        }
+        .card-title{
+            font-size: 1rem;
+        }
+
+
+        /*view-blog*/
+        .view-blog-heading img{
+            height: 400px;
+        }
+        .view-blog-title {
+            font-size: 1.5rem;
+
+        }
+
+        .footer-info{
+            margin-top: 4rem;
+            background: transparent;
+
+        }
+        .btn_go-home{
+            font-size: 0.8rem;
+        }
+        .footer-info-name{
+            font-size: 0.8rem;
+        }
+        .btn__del{
+            padding: 5px 15px;
+        }
+        .btn__edit{
+            padding: 5px 15px;
+        }
+    }
 
