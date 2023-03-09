@@ -162,7 +162,7 @@ header{
     padding: 15px;
     background-color: #c7c0c0;
 }
-.footer-info-name{
+.name-info{
     color: #3f3131;
     font-size: 1.2rem;
     font-weight: 600;
@@ -237,7 +237,7 @@ header{
         .btn_go-home{
             font-size: 0.8rem;
         }
-        .footer-info-name{
+        .name-info{
             font-size: 0.8rem;
         }
         .btn__del{
