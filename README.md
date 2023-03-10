@@ -31,3 +31,7 @@ Aby uruchomić projekt, wykonaj poniższe kroki:
 
 - Express.js
 - Handlebars
+
+## Link do bloga
+
+Możesz zobaczyć działanie projektu [tutaj](https://blog-express.herokuapp.com).
